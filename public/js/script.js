@@ -26,9 +26,55 @@ function toggleDrum(str, idx){
         rideCymbals[idx] = toggle
       }
     }
-
 }
 
-function clear(){
+function clear(str){
+    if(str === 'kicks'){
+        kicks.forEach((i, idx)=>{
+            kicks[idx] = false
+        })
+    }
+    else if(str === 'snares'){
+        snares.forEach((i, idx)=>{
+            snares[idx] = false
+        })
+    }
+    else if(str === 'hiHats'){
+        hiHats.forEach((i, idx)=>{
+            hiHats[idx] = false
+        })
+    }
+    else if(str === 'rideCymbals'){
+        rideCymbals.forEach((i, idx)=>{
+            rideCymbals[idx] = false
+        })
+    }
+}
 
+function invert(str){
+    if(arguments.length == 0){
+        return
+    }
+    if(str){
+        if(str === 'kicks'){
+            kicks.forEach((i, idx)=>{
+                kicks[idx] = !kicks[idx]
+            })
+        }
+        else if(str === 'snares'){
+            snares.forEach((i, idx)=>{
+                snares[idx] = !snares[idx]
+            })
+        }
+        else if(str === 'hiHats'){
+            hiHats.forEach((i, idx)=>{
+                hiHats[idx] = !hiHats[idx]
+            })
+        }
+        else if(str === 'rideCymbals'){
+            rideCymbals.forEach((i, idx)=>{
+                rideCymbals[idx] = !rideCymbals[idx]
+            })
+        }
+    }
 }
