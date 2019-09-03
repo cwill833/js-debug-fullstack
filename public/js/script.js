@@ -5,7 +5,7 @@ let hiHats = new Array(16).fill(false)
 let rideCymbals = new Array(16).fill(false)
 
 function toggleDrum(str, idx){
-    console.log(str, idx)
+    // console.log(str, idx)
     if(arguments.length == 0){
         return
     }
@@ -81,7 +81,27 @@ function invert(str){
     }
 }
 
-// function getNeighborPads(x, y, size){
-//     if(x > size || y > size) return []
-//     return []
-// }
+function getNeighborPads(x, y, size){
+    // console.log(`i am the x: ${x} i am the y: ${y} and i am the size: ${size}`)
+    if(x >= size || y >= size || x < 0 || y < 0) return []
+
+    if(x >= 1 && x <= (size - 2) && y >= 1 && y <= (size - 2)) return [[x -1, y], [x+1, y], [x, y+1], [x, y-1]]
+    
+    else if(x === 0 && y === 0) return [[x+1, y], [x, y+1]]
+    
+    else if(x === size - 1 && y === 0) return [[x-1, y], [x, y+1]]
+    
+    else if(x=== size -1 && y === size -1) return [[x-1, y], [x, y-1]]
+    
+    else if(x === 0 && y === size -1) return [[x+1, y], [x, y-1]]
+
+    else if(x >= 1 && x <= (size - 2) && y === 0) return [[x -1, y],[x, y+1],[x+1, y]]
+
+    else if(x === size -1 && y >= 1 && y <= (size - 2)) return [[x -1, y],[x, y+1],[x, y -1]]
+
+    else if(x >= 1 && x <= (size - 2) && y === size -1) return [[x -1, y],[x, y-1],[x+1, y]]
+
+    else if(x === 0 && y >= 1 && y <= (size - 2)) return [[x + 1, y],[x, y+1],[x, y -1]]
+
+    else return []
+}
