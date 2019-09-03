@@ -3,16 +3,26 @@ const presets = require('./presets');
 
 // Complete this function:
 const presetHandler = (str, idx, arry) => {
-    if(presets[idx]) {
-        if  (str != 'GET' || str != 'POST') return [400]
-        
-        return [200]
-    } else {
-        return [404]
+    if(idx >= 0 && idx <= 15) {
+        switch(str){
+            case 'GET':
+                return [200, presets[idx]]
+            case 'PUT':
+                presets[idx] = arry
+                return [200, arry]
+            default:
+                break
+        }     
+    } 
+    else if(idx > 15 || idx < 0) {
+       return [404]
+   }
+    else{
+        return [400]
     }
 
 
-    return // an array with 1 or 2 elements 
+     // an array with 1 or 2 elements 
 };
 
 // Leave this line so that your presetHandler function can be used elsewhere:
