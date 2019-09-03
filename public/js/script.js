@@ -5,10 +5,12 @@ let hiHats = new Array(16).fill(false)
 let rideCymbals = new Array(16).fill(false)
 
 function toggleDrum(str, idx){
+    console.log(str, idx)
     if(arguments.length == 0){
         return
     }
-    if(str[idx]){
+    if(idx >= 0 && idx < 16){
+        // console.log('hit')
       if(str === 'kicks'){
         let toggle = kicks[idx] ? false : true
         kicks[idx] = toggle
@@ -78,3 +80,8 @@ function invert(str){
         }
     }
 }
+
+// function getNeighborPads(x, y, size){
+//     if(x > size || y > size) return []
+//     return []
+// }

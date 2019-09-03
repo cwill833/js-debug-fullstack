@@ -20,9 +20,6 @@ const presetHandler = (str, idx, arry) => {
     else{
         return [400]
     }
-
-
-     // an array with 1 or 2 elements 
 };
 
 // Leave this line so that your presetHandler function can be used elsewhere:

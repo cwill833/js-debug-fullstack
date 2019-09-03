@@ -227,6 +227,7 @@ $(() => {
       savedPreset = false;
       $('#save-preset').removeClass('saved').text('Save Preset');
     }
+    //where is ride cymbals comming from?
     const [drumType, id] = $(this).attr('id').split('-');
     toggleDrum(drumType, id);
     const shouldBeActive = drums[drumType][id];
