@@ -82,9 +82,6 @@ function invert(str){
 }
 
 function getNeighborPads(x, y, size){
-    // console.log(`i am the x: ${x} i am the y: ${y} and i am the size: ${size}`)
-    if(x >= size || y >= size || x < 0 || y < 0) return []
-
     if(x >= 1 && x <= (size - 2) && y >= 1 && y <= (size - 2)) return [[x -1, y], [x+1, y], [x, y+1], [x, y-1]]
     
     else if(x === 0 && y === 0) return [[x+1, y], [x, y+1]]
